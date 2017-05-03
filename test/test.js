@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 const faker = require('faker');
 const mongoose = require('mongoose');
 console.log('\x1Bc');
-const {BlogPost} = require('../models');
+var {BlogPost} = require('../models');
 const {app, runServer, closeServer} = require('../server');
 
 
