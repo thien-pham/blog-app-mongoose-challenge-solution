@@ -2,6 +2,8 @@ language: node_js
 node_js:
 - '0.11'
 - '0.10'
+services: 
+- mongodb
 deploy: 
   provider: heroku
   api_key: b35bc62d-9547-4798-bf36-afdf237a0bd9
