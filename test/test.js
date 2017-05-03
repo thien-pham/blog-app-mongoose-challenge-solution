@@ -4,7 +4,7 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 console.log('\x1Bc');
 
- {BlogPost} = require('../models');
+const {BlogPost} = require('../models');
 const {app, runServer, closeServer} = require('../server');
 
 
