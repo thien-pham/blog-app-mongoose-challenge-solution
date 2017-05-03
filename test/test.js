@@ -40,7 +40,7 @@ function tearDownDb() {
 describe('Blog server startup',() => {
 
   before(() => {
-    runServer();
+    return runServer();
   });
 
   beforeEach(() => {
@@ -52,7 +52,7 @@ describe('Blog server startup',() => {
   });
 
   after(() => {
-    closeServer();
+    return closeServer();
   });
 
   describe('Testing GET endpoint',() => {
