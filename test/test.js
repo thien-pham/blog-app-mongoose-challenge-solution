@@ -101,5 +101,24 @@ describe('Blog server startup',() => {
       })
     })
   })
+  describe('\nTesting DELETE endpoint', () => {
+    it('\nShould delete a blogpost by id', function() {
+      let blogpost;
 
+      return BlogPost
+        .findOne()
+        .then(function(postData) {
+          blogpost = postData;
+          return chai.request(app).delete(`/posts/${blogpost.id}`);
+        })
+        .then(function(res) {
+          res.should.have.status(204);
+          return BlogPost.findById(blogpost.id).exec();
+        })
+        .then(function(postData) {
+          console.dir(postData);
+          chai.should().not.exist;
+        })
+    })
+  })
 });
